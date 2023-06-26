@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Smarthome Portal</title>
+    <link rel="icon" href="/bootstrap-icons-1.10.5/house-door-fill.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+<h1 class="text-4xl font-extrabold mt-16 mb-16 text-center">Smarthome Portal</h1>
+<div class="flex items-center justify-center flex-wrap gap-6">
+    <script>
+        const links = [
+            {"name":"Email", "link":"https://mailserver.example.duckdns.org/", "image": "mailbox2.svg"},
+            {"name":"NextCloud", "link":"https://nextcloud.example.duckdns.org/", "image": "cloud-fill.svg"},
+            {"name":"Home Assistant", "link":"http://10.0.0.254:8123", "image": "house-gear-fill.svg"},
+            {"name":"Jellyfin", "link":"http://10.0.0.254:8096", "image": "tv-fill.svg"},
+            {"name":"Server", "link":"http://10.0.0.254:9090", "image": "ubuntu.svg"},
+            {"name":"Fritzbox", "link":"http://fritz.box/", "image": "router-fill.svg"},
+            {"name":"Inverter", "link":"http://10.0.0.1", "image": "plug-fill.svg"},
+        ]
+
+        links.forEach((link) => {
+            document.write(`
+            <a href="` + link["link"] + `">
+                <div class="p-4 rounded-3xl border-8 border-sky-500 w-52 h-52 flex items-center flex-col">
+                    <img src="/static/bootstrap-icons-1.10.5/` + link["image"] + `" class="h-28" alt="` + link["name"] + ` icon">
+                    <h3 class="text-xl font-semibold pt-4">` + link["name"] + `</h3>
+                </div>
+            </a>
+            `)
+        })
+    </script>
+</div>
+
+</body>
+</html>
